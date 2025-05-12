@@ -11,7 +11,7 @@ export const createCards = (numberOfPlayItems) => {
   const halfCards = new Array(numberOfPlayItems / 2).fill('').map((_item, idx) => {
     return {
       id: idx + 1,
-      imgSrc: `src/assets/images/${idx + 1}.png`
+      imgSrc: new URL(`../assets/images/${idx + 1}.png`, import.meta.url).href
     }
   })
   const fullCards = halfCards.concat(halfCards)
